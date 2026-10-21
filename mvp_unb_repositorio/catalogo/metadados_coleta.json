@@ -1,0 +1,13 @@
+{
+  "fonte": "kagglehub (imakash3011/customer-personality-analysis)",
+  "dataset": "imakash3011/customer-personality-analysis",
+  "arquivo": "marketing_campaign.csv",
+  "licenca": "CC0: Public Domain",
+  "data_conferencia_licenca": "AAAA-MM-DD",
+  "data_coleta_utc": "2026-10-21T17:30:01+00:00",
+  "linhas": 2240,
+  "colunas": 29,
+  "tamanho_bytes": 220188,
+  "sha256": "cd0affa36b1b981e80ba0e27767e9b3ab723f7a3dba948f722af81abc6b990ea",
+  "formato": "CSV separado por TAB, UTF-8"
+}

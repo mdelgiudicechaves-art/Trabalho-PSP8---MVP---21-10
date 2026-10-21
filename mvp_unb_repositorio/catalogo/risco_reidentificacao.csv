@@ -1,0 +1,4 @@
+quase-identificadores,grupos,menor grupo (k),% clientes em grupos < 5
+ano_nascimento + educacao + estado_civil + n_filhos,1056,1,76.3
+faixa_etaria + educacao_id + estado_civil_id + tem_filhos,188,1,7.8
+faixa_etaria + faixa_renda + educacao_id + tem_filhos,150,1,5.6

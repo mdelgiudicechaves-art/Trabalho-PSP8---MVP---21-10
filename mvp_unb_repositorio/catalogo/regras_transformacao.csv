@@ -1,0 +1,11 @@
+regra,afetados,decisao
+R1 Colunas constantes,2,"Descartadas ['Z_CostContact', 'Z_Revenue'] (valores [np.int64(3), np.int64(11)]); mantidos só como premissa de custo/receita em P4"
+R2 Data de referência,2240,data_ref = max(Dt_Customer) = 2014-06-29; idade e tempo de cliente calculados nela
+R3 Renda nula,24,Imputada pela mediana de renda do mesmo nível de educação (flag_renda_imputada)
+R4 Renda outlier extremo,1,"Valores > 168,179 (Q3+3·IQR) tratados como erro de digitação: viram nulo e são imputados"
+R5 Idade implausível,3,Idade > 100 ou < 16 na data de referência vira nulo e é imputada pela mediana (flag_idade_corrigida)
+R6 Estado civil,7,"Alone -> Solteiro(a); Absurd e YOLO -> 'Não informado' (mantidos, sem inferir valor)"
+R7 Educação '2n Cycle',203,Premissa: 2º ciclo (Bologna) equivale a Mestrado; coluna original preservada
+R8 Features,2240,"gasto_total, compras_total (web+catálogo+loja; desconto é subconjunto), n_filhos, tempo_cliente_dias, ticket_medio, share por canal, pct por categoria, n_campanhas_aceitas"
+R9 Consistência: compras com desconto > compras totais,3,"Mantidos; pct_compras_desconto limitado a 1 (inconsistência registrada, não corrigida)"
+R10 Clientes sem compras,6,Mantidos (têm gasto > 0); ticket médio e shares ficam 0 (flag_sem_compras)

@@ -1,0 +1,15 @@
+dimensão,atributo,teste,ocorrências,decisão
+Completude,Income,valores nulos,24,Imputar pela mediana do nível de educação (R3)
+Completude,demais colunas,nulos fora de Income,0,Nenhuma ação
+Unicidade,linha inteira,linhas duplicadas,0,Nenhuma ação
+Unicidade,ID,IDs duplicados,0,Nenhuma ação
+Consistência,NumDealsPurchases vs canais,compras com desconto > compras totais,3,Manter e limitar % a 1 (R9)
+Consistência,compras,clientes com 0 compras mas gasto > 0,6,Manter; ticket/shares = 0 (R10)
+Conformidade,Dt_Customer,datas fora do formato dd-mm-aaaa,0,Conversão explícita (R2)
+Conformidade,Marital_Status,categorias fora do domínio esperado (Alone/Absurd/YOLO),7,Recodificar (R6)
+Conformidade,Education,categoria '2n Cycle' (nomenclatura distinta),203,"Padronizar como Mestrado, preservando original (R7)"
+Conformidade,binárias,"valores fora de {0,1}",0,Nenhuma ação
+Conformidade,"Z_CostContact, Z_Revenue",colunas constantes,2,Descartar; usar só como premissa de P4 (R1)
+Acurácia,Year_Birth,idade > 100 anos na data de referência,3,Imputar idade pela mediana (R5)
+Acurácia,Income,outlier extremo (> Q3+3·IQR),1,Tratar como erro e imputar (R4)
+Atualidade,Dt_Customer,período dos cadastros: 2012-07-30 a 2014-06-29,12,Dados defasados (anos desde o último cadastro); registrar como limitação

@@ -1,0 +1,41 @@
+{
+  "name": "MVP_UnB_Pipeline_Medalhao",
+  "tasks": [
+    {
+      "task_key": "01_bronze_ingestao",
+      "notebook_task": {
+        "notebook_path": "/Workspace/MVP PSP8/databricks_notebooks/01_bronze_ingestao"
+      }
+    },
+    {
+      "task_key": "02_silver_limpeza_features",
+      "notebook_task": {
+        "notebook_path": "/Workspace/MVP PSP8/databricks_notebooks/02_silver_limpeza_features"
+      },
+      "depends_on": [
+        { "task_key": "01_bronze_ingestao" }
+      ]
+    },
+    {
+      "task_key": "03_gold_estrela_cluster",
+      "notebook_task": {
+        "notebook_path": "/Workspace/MVP PSP8/databricks_notebooks/03_gold_estrela_cluster"
+      },
+      "depends_on": [
+        { "task_key": "02_silver_limpeza_features" }
+      ]
+    },
+    {
+      "task_key": "04_analise_p1_p5",
+      "notebook_task": {
+        "notebook_path": "/Workspace/MVP PSP8/databricks_notebooks/04_analise_p1_p5"
+      },
+      "depends_on": [
+        { "task_key": "03_gold_estrela_cluster" }
+      ]
+    }
+  ],
+  "queue": {
+    "enabled": true
+  }
+}
